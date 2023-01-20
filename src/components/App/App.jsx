@@ -1,8 +1,24 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import { useEffect } from 'react';
 
 function App() {
+
+  useEffect(() => {
+    fetchFeedback();
+  }, [])
+
+  function fetchFeedback (){
+    axios({
+      method: 'GET',
+      url: '/feedback'
+    }).then((response) => {
+      console.log('Succes in GET /feedback! ', response.data);
+    }).catch((error) => {
+      console.log('Error in GET /feedback: ', error);
+    })
+  }
 
   return (
     <div className='App'>
