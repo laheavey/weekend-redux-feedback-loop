@@ -19,6 +19,7 @@ function SupportQuestion () {
             <h2>How well are you being supported?</h2>
             <form>
                 <input 
+                required
                 type='number'
                 value={supportInput}
                 onChange={(event) => setSupportInput(event.target.value)}

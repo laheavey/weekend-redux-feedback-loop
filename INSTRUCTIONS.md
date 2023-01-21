@@ -90,7 +90,7 @@ The parts:
             [] NO input validation
             [✅] Next button (link, hash router)
         [] /#/ReviewFeedback
-            [] Receive inputs from Q1-4
+            [✅] Receive inputs from Q1-4
             [] Submit button
                 [] Save info to the server
                 [] Link, hash router back to /#/QuestionOne

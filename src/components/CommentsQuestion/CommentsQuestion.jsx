@@ -18,6 +18,7 @@ function CommentsQuestion () {
             <h2>Any comments you want to leave?</h2>
             <form>
                 <input 
+                required
                 type='text' 
                 placeholder='Enter comments here.'
                 value={commentsInput}
