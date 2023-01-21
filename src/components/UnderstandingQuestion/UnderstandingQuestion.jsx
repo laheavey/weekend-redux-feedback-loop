@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 
-function SupportQuestion () {
+function UnderstandingQuestion () {
     return (
         <>
-            <h2>How well are you being supported?</h2>
+            <h2>How well are you understanding the content?</h2>
             <form>
                 <input type='number'></input>
                 <button>
-                    <Link to='/CommentsQuestion'>
+                    <Link to='/SupportQuestion'>
                     NEXT
                     </Link>
                 </button>
@@ -17,5 +17,5 @@ function SupportQuestion () {
     )
 }
 
-export default SupportQuestion;
+export default UnderstandingQuestion;
 
