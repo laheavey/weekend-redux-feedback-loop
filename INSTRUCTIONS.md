@@ -71,24 +71,24 @@ The parts:
     const commentsAnswer = useSelector(store => store.commentsAnswer);
 
 [] Components
-    [] Header
-    [] Routes
-        [] /#/FeelingQuestion - How are you feeling today? (number)
-            [] Form
+    [✅] Header
+    [✅] Routes
+        [✅] /#/FeelingQuestion - How are you feeling today? (number)
+            [✅] Form
             [] Input validation
-            [] Next button (link, hash router)
-        [] /#/UnderstandingQuestion - How well are you understanding the content? (number)
-            [] Form
+            [✅] Next button (link, hash router)
+        [✅] /#/UnderstandingQuestion - How well are you understanding the content? (number)
+            [✅] Form
             [] Input validation
-            [] Next button (link, hash router)
-        [] /#/SupportQuestion - How well are you being supported? (number)
-            [] Form
+            [✅] Next button (link, hash router)
+        [✅] /#/SupportQuestion - How well are you being supported? (number)
+            [✅] Form
             [] Input validation
-            [] Next button (link, hash router)
-        [] /#/CommentsQuestion - Any comments you want to leave? (text)
-            [] Form
+            [✅] Next button (link, hash router)
+        [✅] /#/CommentsQuestion - Any comments you want to leave? (text)
+            [✅] Form
             [] NO input validation
-            [] Next button (link, hash router)
+            [✅] Next button (link, hash router)
         [] /#/ReviewFeedback
             [] Receive inputs from Q1-4
             [] Submit button

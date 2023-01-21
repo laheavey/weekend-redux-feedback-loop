@@ -9,7 +9,7 @@ import FeelingQuestion from '../FeelingQuestion/FeelingQuestion';
 import UnderstandingQuestion from '../UnderstandingQuestion/UnderstandingQuestion';
 import SupportQuestion from '../SupportQuestion/SupportQuestion';
 import CommentsQuestion from '../CommentsQuestion/CommentsQuestion';
-// import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
+import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 
 import { HashRouter as Router, Route } from 'react-router-dom';
 
@@ -47,7 +47,7 @@ function App() {
           <CommentsQuestion />
         </Route>
         <Route exact path='/ReviewFeedback'>
-          {/* <ReviewFeedback /> */}
+          <ReviewFeedback />
         </Route>
         <Route exact path='/Success'>
 
