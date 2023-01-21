@@ -1,18 +1,17 @@
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function SupportQuestion () {
     const dispatch = useDispatch();
     const [supportInput, setSupportInput] = useState('');
 
     const handleInput = () => {
-        console.log(supportInput);
         dispatch({
             type: 'SET_SUPPORT_ANSWER',
             payload: supportInput
         })
-    }
+    };
 
     return (
         <>
@@ -24,11 +23,15 @@ function SupportQuestion () {
                 value={supportInput}
                 onChange={(event) => setSupportInput(event.target.value)}
                 ></input>
-                <button onClick={handleInput}>
-                    <Link to='/CommentsQuestion'>
-                    NEXT
-                    </Link>
-                </button>
+                
+                {supportInput 
+                    ? 
+                    <button onClick={handleInput}>
+                        <Link to='/CommentsQuestion'>NEXT</Link>
+                    </button>
+                    : 
+                    <button>NEXT</button>
+                }  
             </form>
         </>
 

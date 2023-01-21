@@ -1,13 +1,12 @@
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function FeelingQuestion () {
     const dispatch = useDispatch();
     const [feelingInput, setFeelingInput] = useState('');
 
     const handleInput = () => {
-        console.log(feelingInput);
         dispatch({
             type: 'SET_FEELING_ANSWER',
             payload: feelingInput
@@ -24,11 +23,15 @@ function FeelingQuestion () {
                 value={feelingInput}
                 onChange={(event) => setFeelingInput(event.target.value)}
                 ></input>
-                <button onClick={handleInput}>
-                    <Link to='/UnderstandingQuestion'>
-                    NEXT
-                    </Link>
-                </button>
+                
+                {feelingInput 
+                    ? 
+                    <button onClick={handleInput}>
+                        <Link to='/UnderstandingQuestion'>NEXT</Link>
+                    </button>
+                    : 
+                    <button>NEXT</button>
+                }  
             </form>
         </>
 

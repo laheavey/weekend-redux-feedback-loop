@@ -1,18 +1,17 @@
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function UnderstandingQuestion () {
     const dispatch = useDispatch();
     const [understandingInput, setUnderstandingInput] = useState('');
 
     const handleInput = () => {
-        console.log(understandingInput);
-        dispatch({
-            type: 'SET_UNDERSTANDING_ANSWER',
-            payload: understandingInput
-        })
-    }
+            dispatch({
+                type: 'SET_UNDERSTANDING_ANSWER',
+                payload: understandingInput
+            })
+    };
 
     return (
         <>
@@ -24,11 +23,14 @@ function UnderstandingQuestion () {
                 value={understandingInput}
                 onChange={(event) => setUnderstandingInput(event.target.value)}
                 ></input>
-                <button onClick={handleInput}>
-                    <Link to='/SupportQuestion'>
-                    NEXT
-                    </Link>
-                </button>
+                {understandingInput 
+                    ? 
+                    <button onClick={handleInput}>
+                        <Link to='/SupportQuestion'>NEXT</Link>
+                    </button>
+                    : 
+                    <button>NEXT</button>
+                } 
             </form>
         </>
 
