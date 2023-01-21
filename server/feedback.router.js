@@ -3,10 +3,11 @@ const router = express.Router();
 
 const pool = require('./modules/pool');
 
+// GET route; unused, reflexively built
 router.get('/', (req,res) => {
     let sqlQuery = 
     `SELECT * FROM "feedback"
-    ORDER BY "date";`;
+        ORDER BY "date";`;
     pool.query(sqlQuery)
     .then((response) => {
         console.log('Success in GET /feedback! ', response.rows);
@@ -17,7 +18,9 @@ router.get('/', (req,res) => {
         res.sendStatus(500);
     })
 })
+// END GET
 
+// POST route
 router.post('/', (req,res) => {
     let sqlQuery = 
     `INSERT INTO "feedback"
@@ -40,5 +43,6 @@ router.post('/', (req,res) => {
         res.sendStatus(500)
     })
 })
+// END POST
 
 module.exports = router;

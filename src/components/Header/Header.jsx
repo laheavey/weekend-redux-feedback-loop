@@ -1,5 +1,6 @@
 import './Header.css';
 
+// Header component, shows on all pages/routes.
 function Header () {
     return (
         <header className='App-header'>

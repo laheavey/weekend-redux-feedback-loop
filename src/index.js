@@ -7,6 +7,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'; 
 import logger from 'redux-logger';
 
+// Reducers for the data grabbed from the feedback form.
 const feelingAnswer = (state=[], action) => {
     if (action.type === 'SET_FEELING_ANSWER'){
         return action.payload;
