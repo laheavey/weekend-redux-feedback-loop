@@ -35,69 +35,33 @@ The parts:
 ![comments](wireframes/comments.png)
 
 
-[] Reducer - feedback answers
-    const feelingAnswer = (state, event) => {
-        if (action.type === ){
-            return action.payload;
-        }
-        return state;
-    }
-
-    const understandingAnswer = (state, event) => {
-        if (action.type === ){
-            return action.payload;
-        }
-        return state;
-    }
-
-    const supportAnswer = (state, event) => {
-        if (action.type === ){
-            return action.payload;
-        }
-        return state;
-    }
-
-    const commentsAnswer = (state, event) => {
-        if (action.type === 'SET_){
-            return action.payload;
-        }
-        return state;
-    }
-
-    [] Selector
-    const feelingAnswer = useSelector(store => store.feelingAnswer);
-    const understandingAnswer = useSelector(store => store.understandingAnswer);
-    const supportAnswer = useSelector(store => store.supportAnswer);
-    const commentsAnswer = useSelector(store => store.commentsAnswer);
-
-[] Components
+[✅] Components
     [✅] Header
     [✅] Routes
         [✅] /#/FeelingQuestion - How are you feeling today? (number)
             [✅] Form
-            [] Input validation
+            [✅] Input validation
             [✅] Next button (link, hash router)
         [✅] /#/UnderstandingQuestion - How well are you understanding the content? (number)
             [✅] Form
-            [] Input validation
+            [✅] Input validation
             [✅] Next button (link, hash router)
         [✅] /#/SupportQuestion - How well are you being supported? (number)
             [✅] Form
-            [] Input validation
+            [✅] Input validation
             [✅] Next button (link, hash router)
         [✅] /#/CommentsQuestion - Any comments you want to leave? (text)
             [✅] Form
-            [] NO input validation
+            [✅] NO input validation
             [✅] Next button (link, hash router)
-        [] /#/ReviewFeedback
+        [✅] /#/ReviewFeedback
             [✅] Receive inputs from Q1-4
-            [] Submit button
-                [] Save info to the server
-                [] Link, hash router back to /#/QuestionOne
-        [] /#/Success page when confirmed submitted
-            [] Leave new feedback button
-                [] Reset data
-                [] Go back to Q1
+            [✅] Submit button
+                [✅] Save info to the server
+        [✅] /#/Success page when confirmed submitted
+            [✅] Leave new feedback button
+                [✅] Reset data
+                [✅] Go back to Q1
 
 *QUESTIONS*
 

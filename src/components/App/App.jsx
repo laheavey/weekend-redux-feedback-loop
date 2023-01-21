@@ -10,14 +10,15 @@ import UnderstandingQuestion from '../UnderstandingQuestion/UnderstandingQuestio
 import SupportQuestion from '../SupportQuestion/SupportQuestion';
 import CommentsQuestion from '../CommentsQuestion/CommentsQuestion';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
+import Success from '../Success/Success';
 
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 function App() {
 
-  useEffect(() => {
-    fetchFeedback();
-  }, [])
+  // useEffect(() => {
+  //   fetchFeedback();
+  // }, [])
 
   function fetchFeedback (){
     axios({
@@ -50,7 +51,7 @@ function App() {
           <ReviewFeedback />
         </Route>
         <Route exact path='/Success'>
-    
+          <Success />
         </Route>
       </Router>
 
