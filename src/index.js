@@ -14,21 +14,21 @@ const feelingAnswer = (state=[], action) => {
     return state;
 }
 
-const understandingAnswer = (state, action) => {
+const understandingAnswer = (state=[], action) => {
     if (action.type === 'SET_UNDERSTANDING_ANSWER'){
         return action.payload;
     }
     return state;
 }
 
-const supportAnswer = (state, action) => {
+const supportAnswer = (state=[], action) => {
     if (action.type === 'SET_SUPPORT_ANSWER'){
         return action.payload;
     }
     return state;
 }
 
-const commentsAnswer = (state, action) => {
+const commentsAnswer = (state=[], action) => {
     if (action.type === 'SET_COMMENTS_ANSWER'){
         return action.payload;
     }
@@ -37,10 +37,10 @@ const commentsAnswer = (state, action) => {
 
 const reduxStore = createStore (
     combineReducers({
-        feelingAnswer
-    //     understandingAnswer,
-    //     supportAnswer,
-    //     commentsAnswer
+        feelingAnswer,
+        understandingAnswer,
+        supportAnswer,
+        commentsAnswer
     }),
     applyMiddleware(logger)
 );
