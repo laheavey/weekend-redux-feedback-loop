@@ -5,12 +5,12 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 
 // Components for each page (+ header)
 import Header from '../Header/Header';
-import FeelingQuestion from '../FeelingQuestion/FeelingQuestion';
-import UnderstandingQuestion from '../UnderstandingQuestion/UnderstandingQuestion';
-import SupportQuestion from '../SupportQuestion/SupportQuestion';
-import CommentsQuestion from '../CommentsQuestion/CommentsQuestion';
-import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
-import Success from '../Success/Success';
+import FeelingQuestion from '../1FeelingQuestion/FeelingQuestion';
+import UnderstandingQuestion from '../2UnderstandingQuestion/UnderstandingQuestion';
+import SupportQuestion from '../3SupportQuestion/SupportQuestion';
+import CommentsQuestion from '../4CommentsQuestion/CommentsQuestion';
+import ReviewFeedback from '../5ReviewFeedback/ReviewFeedback';
+import Success from '../6Success/Success';
 
 function App() {
 // GET route - not used in base mode, made as a reflex. 🤷‍♀️
@@ -25,6 +25,8 @@ function App() {
   //   })
   // }
 
+
+
 // Various routes and components for the web app.  
   return (
     <div className='App'>
@@ -34,9 +36,15 @@ function App() {
         <Route exact path='/'>
           <FeelingQuestion />
         </Route>
+        <Route exact path='/Edit'>
+          <FeelingQuestion />
+        </Route>
 
         <Route exact path='/UnderstandingQuestion'>
           <UnderstandingQuestion />
+        </Route>
+        <Route exact path='/Edit/UnderstandingQuestion'>
+          <FeelingQuestion />
         </Route>
 
         <Route exact path='/SupportQuestion'>

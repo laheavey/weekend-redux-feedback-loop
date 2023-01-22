@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function UnderstandingQuestion () {
     const dispatch = useDispatch();
     const [understandingInput, setUnderstandingInput] = useState('');
 
+    const understandingAnswer = useSelector(store => store.understandingAnswer);
+
     // Runs dispatch, sends input. If input already exists 
     // from previous submission, it is overwritten.
-    const handleInput = () => {
+    const handleDispatch = () => {
         dispatch({
             type: 'SET_UNDERSTANDING_ANSWER',
             payload: understandingInput
@@ -26,16 +28,12 @@ function UnderstandingQuestion () {
             required
             type='number'
             value={understandingInput}
+            placeholder={understandingAnswer}
             onChange={(event) => setUnderstandingInput(event.target.value)}
             ></input>
-            {understandingInput 
-                ? 
-                <button onClick={handleInput}>
+                <button onClick={handleDispatch}>
                 <Link to='/SupportQuestion'>NEXT</Link>
                 </button>
-                : 
-                <button>NEXT</button>
-            } 
         </form>
         </>
     )

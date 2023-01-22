@@ -35,33 +35,33 @@ The parts:
 ![comments](wireframes/comments.png)
 
 
-[✅] Components
-    [✅] Header
-    [✅] Routes
-        [✅] /#/FeelingQuestion - How are you feeling today? (number)
-            [✅] Form
-            [✅] Input validation
-            [✅] Next button (link, hash router)
-        [✅] /#/UnderstandingQuestion - How well are you understanding the content? (number)
-            [✅] Form
-            [✅] Input validation
-            [✅] Next button (link, hash router)
-        [✅] /#/SupportQuestion - How well are you being supported? (number)
-            [✅] Form
-            [✅] Input validation
-            [✅] Next button (link, hash router)
-        [✅] /#/CommentsQuestion - Any comments you want to leave? (text)
-            [✅] Form
-            [✅] NO input validation
-            [✅] Next button (link, hash router)
-        [✅] /#/ReviewFeedback
-            [✅] Receive inputs from Q1-4
-            [✅] Submit button
-                [✅] Save info to the server
-        [✅] /#/Success page when confirmed submitted
-            [✅] Leave new feedback button
-                [✅] Reset data
-                [✅] Go back to Q1
+- [✅] Components
+-    [✅] Header
+-    [✅] Routes
+-        [✅] /#/FeelingQuestion - How are you feeling today? (number)
+-            [✅] Form
+-            [✅] Input validation
+-            [✅] Next button (link, hash router)
+-        [✅] /#/UnderstandingQuestion - How well are you understanding the content? (number)
+-            [✅] Form
+-            [✅] Input validation
+-            [✅] Next button (link, hash router)
+-        [✅] /#/SupportQuestion - How well are you being supported? (number)
+-            [✅] Form
+-            [✅] Input validation
+-            [✅] Next button (link, hash router)
+-        [✅] /#/CommentsQuestion - Any comments you want to leave? (text)
+-            [✅] Form
+-            [✅] NO input validation
+-            [✅] Next button (link, hash router)
+-        [✅] /#/ReviewFeedback
+-            [✅] Receive inputs from Q1-4
+-            [✅] Submit button
+-                [✅] Save info to the server
+-        [✅] /#/Success page when confirmed submitted
+-            [✅] Leave new feedback button
+-                [✅] Reset data
+-                [✅] Go back to Q1
 
 *QUESTIONS*
 
@@ -94,18 +94,24 @@ When the submit button is clicked, save the submission in the database. The user
 
 ### UPDATE SCORES
 
-Allow the user to go back to a previous step and change their score. You still need to disallow empty values!
+- [ ] Allow the user to go back to a previous step and change their score. You still need to disallow empty values!
+
+- [ ] Review page - button next to each value, linking back to page
+- [ ] investigate history: 
+- [ ] possible to use that as a link, and send them back? 
+- [ ] possible to conditionally render new button, send back to review?
+
 
 ### STYLING
-Improve the styling of the app using Material-UI. This might include cards, snackbars, buttons, a nav bar, icons, and/or a theme. 
+- [ ] Improve the styling of the app using Material-UI. This might include cards, snackbars, buttons, a nav bar, icons, and/or a theme. 
 
 ### ADMIN SECTION
 
-- Display all of the existing feedback at the route `/admin`. The most recently added feedback should appear at the top of the list. Allow the user to delete existing feedback. Prompt the user to confirm prior to deleting the feedback from the database.
+- [ ] Display all of the existing feedback at the route `/admin`. The most recently added feedback should appear at the top of the list. Allow the user to delete existing feedback. Prompt the user to confirm prior to deleting the feedback from the database.
 
 ![display feedback](wireframes/admin.png)
 
-- Add the ability to flag an existing feedback entry for further review on the /admin view.
+- [ ] Add the ability to flag an existing feedback entry for further review on the /admin view.
 
 ### DEPLOY
-Deploy your project to Heroku. You'll need to read the special instructions for building and deploying with React. 
+- [ ] Deploy your project to Heroku. You'll need to read the special instructions for building and deploying with React. 

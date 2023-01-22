@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function SupportQuestion () {
     const dispatch = useDispatch();
     const [supportInput, setSupportInput] = useState('');
 
+    const supportAnswer = useSelector(store => store.supportAnswer);
+
     // Runs dispatch, sends input. If input already exists 
     // from previous submission, it is overwritten.
-    const handleInput = () => {
+    const handleDispatch = () => {
         dispatch({
             type: 'SET_SUPPORT_ANSWER',
             payload: supportInput
@@ -26,16 +28,12 @@ function SupportQuestion () {
             required
             type='number'
             value={supportInput}
+            placeholder={supportAnswer}
             onChange={(event) => setSupportInput(event.target.value)}
             ></input>
-            {supportInput 
-                ? 
-                <button onClick={handleInput}>
+                <button onClick={handleDispatch}>
                 <Link to='/CommentsQuestion'>NEXT</Link>
                 </button>
-                : 
-                <button>NEXT</button>
-            }  
         </form>
         </>
     )

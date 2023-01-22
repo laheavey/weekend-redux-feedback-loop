@@ -11,7 +11,7 @@ import logger from 'redux-logger';
 const feelingAnswer = (state=[], action) => {
     if (action.type === 'SET_FEELING_ANSWER'){
         return action.payload;
-    }
+    } 
     return state;
 }
 
