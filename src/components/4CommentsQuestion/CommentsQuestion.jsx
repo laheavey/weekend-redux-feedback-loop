@@ -6,26 +6,16 @@ function CommentsQuestion () {
     const dispatch = useDispatch();
     const routeMatch = useRouteMatch();
     const [commentsInput, setCommentsInput] = useState('');
-
     const commentsAnswer = useSelector(store => store.commentsAnswer);
 
     // Runs dispatch, sends input. If input already exists 
-    // from previous submission, it is overwritten (even if
-    // input is nothing).
+    // (ie if this is being edited), answer is overwritten.
     const handleDispatch = () => {
         dispatch({
             type: 'SET_COMMENTS_ANSWER',
             payload: commentsInput
         })
-    }
-
-    const checkIfEdit = () => {
-        if (routeMatch.path.includes('Edit')) {
-            return {commentsAnswer};
-        } else {
-            return 'Enter comments here.';
-        }
-    }
+    };
 
     // Renders feedback page asking for comments. Any value
     // entered (including nothing) is dispatched when the 

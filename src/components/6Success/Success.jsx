@@ -2,10 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-
-// Renders page asking for rating of understanding. A
-// value is required; input is dispatched when the 
-// 'NEXT' button is clicked, and the next page is loaded.
+// Confirms successful submission for the user, dispatches
+// an action to clear all answer values.
 
 function Success () {
     const dispatch = useDispatch();

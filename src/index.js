@@ -40,6 +40,7 @@ const commentsAnswer = (state=[], action) => {
     return state;
 }
 
+// Reducer for all survey responses received & stored in server.
 const surveyResponses = (state=[], action) => {
     switch (action.type) {
         case 'SET_SURVEY_RESPONSES' : return action.payload;
@@ -55,7 +56,7 @@ const reduxStore = createStore (
         commentsAnswer,
         surveyResponses
     }),
-    applyMiddleware(logger)
+        applyMiddleware(logger)
 );
 
 

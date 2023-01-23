@@ -2,9 +2,7 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
-
 function ReviewFeedback () {
-
     // I can't remember if these are called reducers or selectors,
     // but either way, these values update as the user moves through
     // the feedback form. I called them here today for a serious chat,
@@ -32,16 +30,15 @@ function ReviewFeedback () {
         }).then((response) => {
             console.log('Success in POST /feedback!', response.data);
             history.push('/Success');
-
         }).catch((error) => {
             console.log('Error in POST /feedback: ', error);
             alert('Error: Please validate feedback and try again.');
         })
     }
 
-    // Edit button sends user back to page clicked; placeholders indicate
-    // the current answer. I could not get values to carry over historically
-    // and reroute back to the review page after editing. 
+    // Edit button sends user back to an 'edit' version of the page clicked; 
+    // placeholders indicate the previous answer. Once edited, user clicks 'next'
+    // and is rerouted back to this review page. 
     return (
         <>
         <h2>Review Your Feedback</h2>

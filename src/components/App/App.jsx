@@ -1,5 +1,4 @@
 import './App.css';
-import axios from 'axios'; // for unused GET route
 import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 

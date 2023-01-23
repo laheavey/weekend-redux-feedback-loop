@@ -1,4 +1,5 @@
-
+// Component for each response item mapped through.
+// Delete and Flag buttons are non-functional.
 function AdminTableItems ({response}) {
     let responseDate = response.date.slice(0, 10);
 

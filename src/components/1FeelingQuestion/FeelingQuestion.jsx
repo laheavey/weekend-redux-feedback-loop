@@ -6,29 +6,32 @@ function FeelingQuestion () {
     const dispatch = useDispatch();
     const routeMatch = useRouteMatch();
     const [feelingInput, setFeelingInput] = useState('');
-
     const feelingAnswer = useSelector(store => store.feelingAnswer);
     
     // Runs dispatch, sends input. If input already exists 
-    // from previous submission, it is overwritten.
+    // (ie if this is being edited), answer is overwritten.
     const handleDispatch = () => {
         dispatch({
             type: 'SET_FEELING_ANSWER',
             payload: feelingInput
         })
-    }
+    };
 
+    // Changes 'next' button navigation depending on how 
+    // the user arrived at this page.
     const checkIfEdit = () => {
         if (routeMatch.path.includes('Edit')) {
             return '/ReviewFeedback';
         } else {
             return '/UnderstandingQuestion';
         }
-    }
+    };
 
     // Renders page asking for rating of feeling. A
-    // value is required; input is dispatched when the 
+    // value 1-5 is required; input is dispatched when the 
     // 'NEXT' button is clicked, and the next page is loaded.
+    // If answer is being edited from previous response, current
+    // answer is populated as the placeholder.
     return (
         <>
         <h2>How are you feeling today?</h2>
@@ -53,7 +56,6 @@ function FeelingQuestion () {
 
         </form>
         </>
-
     )
 }
 

@@ -1,28 +1,26 @@
-import './Admin.css';
-
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-// import { response } from "express";
-
+import './Admin.css';
 import AdminTableItems from "./AdminTableItems";
 
 function Admin () {
     const dispatch = useDispatch();
     const surveyResponses = useSelector(store => store.surveyResponses);
 
+    // Runs GET on loading.
     useEffect(() => {
         fetchFeedback();
-    }, [])
+    }, []);
 
-    // GET route
+    // GET route; if successful, dispatches survey responses.
     function fetchFeedback (){
         axios({
         method: 'GET',
         url: '/feedback'
         })
         .then((response) => {
-            console.log('Succes in GET /feedback! ', response.data);
+            console.log('Succes in GET /feedback! ');
             dispatch({
                 type: 'SET_SURVEY_RESPONSES',
                 payload: response.data

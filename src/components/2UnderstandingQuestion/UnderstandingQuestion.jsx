@@ -6,11 +6,10 @@ function UnderstandingQuestion () {
     const dispatch = useDispatch();
     const routeMatch = useRouteMatch();
     const [understandingInput, setUnderstandingInput] = useState('');
-
     const understandingAnswer = useSelector(store => store.understandingAnswer);
 
     // Runs dispatch, sends input. If input already exists 
-    // from previous submission, it is overwritten.
+    // (ie if this is being edited), answer is overwritten.
     const handleDispatch = () => {
         dispatch({
             type: 'SET_UNDERSTANDING_ANSWER',
@@ -18,17 +17,21 @@ function UnderstandingQuestion () {
         })
     };
 
+    // Changes 'next' button navigation depending on how 
+    // the user arrived at this page.
     const checkIfEdit = () => {
         if (routeMatch.path.includes('Edit')) {
             return '/ReviewFeedback';
         } else {
             return '/SupportQuestion';
         }
-    }
+    };
 
     // Renders page asking for rating of understanding. A
-    // value is required; input is dispatched when the 
+    // value 1-5 is required; input is dispatched when the 
     // 'NEXT' button is clicked, and the next page is loaded.
+    // If answer is being edited from previous response, current
+    // answer is populated as the placeholder.
     return (
         <>
         <h2>How well are you understanding the content?</h2>
