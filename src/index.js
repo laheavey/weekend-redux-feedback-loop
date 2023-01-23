@@ -40,12 +40,20 @@ const commentsAnswer = (state=[], action) => {
     return state;
 }
 
+const surveyResponses = (state=[], action) => {
+    switch (action.type) {
+        case 'SET_SURVEY_RESPONSES' : return action.payload;
+    }
+    return state;
+}
+
 const reduxStore = createStore (
     combineReducers({
         feelingAnswer,
         understandingAnswer,
         supportAnswer,
-        commentsAnswer
+        commentsAnswer,
+        surveyResponses
     }),
     applyMiddleware(logger)
 );

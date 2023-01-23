@@ -37,12 +37,20 @@ function FeelingQuestion () {
             required
             type='number'
             value={feelingInput}
+            min='1'
+            max='5'
             placeholder={feelingAnswer}
             onChange={(event) => setFeelingInput(event.target.value)}
             ></input>
+            {(feelingInput <= 5 && feelingInput >= 1 )
+            ? 
             <button onClick={handleDispatch}>
             <Link to={checkIfEdit}>NEXT</Link>
             </button> 
+            :
+            <button>NEXT</button>
+            }
+
         </form>
         </>
 

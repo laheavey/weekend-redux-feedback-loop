@@ -37,12 +37,19 @@ function SupportQuestion () {
             required
             type='number'
             value={supportInput}
+            min='1'
+            max='5'
             placeholder={supportAnswer}
             onChange={(event) => setSupportInput(event.target.value)}
             ></input>
+            {(supportInput <= 5 && supportInput >= 1 )
+            ?
                 <button onClick={handleDispatch}>
                 <Link to={checkIfEdit}>NEXT</Link>
                 </button>
+            :
+            <button>NEXT</button>
+}
         </form>
         </>
     )

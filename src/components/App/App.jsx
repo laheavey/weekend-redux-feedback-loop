@@ -11,21 +11,9 @@ import SupportQuestion from '../3SupportQuestion/SupportQuestion';
 import CommentsQuestion from '../4CommentsQuestion/CommentsQuestion';
 import ReviewFeedback from '../5ReviewFeedback/ReviewFeedback';
 import Success from '../6Success/Success';
+import Admin from '../Admin/Admin';
 
 function App() {
-// GET route - not used in base mode, made as a reflex. 🤷‍♀️
-  // function fetchFeedback (){
-  //   axios({
-  //     method: 'GET',
-  //     url: '/feedback'
-  //   }).then((response) => {
-  //     console.log('Succes in GET /feedback! ', response.data);
-  //   }).catch((error) => {
-  //     console.log('Error in GET /feedback: ', error);
-  //   })
-  // }
-
-
 
 // Various routes and components for the web app.  
   return (
@@ -67,6 +55,10 @@ function App() {
 
         <Route exact path='/Success'>
           <Success />
+        </Route>
+
+        <Route exact path='/Admin'>
+          <Admin />
         </Route>
 
       </Router>
