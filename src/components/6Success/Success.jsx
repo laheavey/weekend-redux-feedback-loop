@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 
@@ -6,7 +8,14 @@ import { Link } from 'react-router-dom';
 // 'NEXT' button is clicked, and the next page is loaded.
 
 function Success () {
+    const dispatch = useDispatch();
 
+    useEffect(() => {
+        dispatch({
+            type: 'CLEAR_ANSWER',
+            payload: ''
+        })
+    })
 
     return (
         <>

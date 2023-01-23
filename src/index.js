@@ -9,29 +9,33 @@ import logger from 'redux-logger';
 
 // Reducers for the data grabbed from the feedback form.
 const feelingAnswer = (state=[], action) => {
-    if (action.type === 'SET_FEELING_ANSWER'){
-        return action.payload;
-    } 
+    switch (action.type) {
+        case 'SET_FEELING_ANSWER': return action.payload;
+        case 'CLEAR_ANSWER': return [];
+    }
     return state;
 }
 
 const understandingAnswer = (state=[], action) => {
-    if (action.type === 'SET_UNDERSTANDING_ANSWER'){
-        return action.payload;
+    switch (action.type) {
+        case 'SET_UNDERSTANDING_ANSWER': return action.payload;
+        case 'CLEAR_ANSWER': return [];
     }
     return state;
 }
 
 const supportAnswer = (state=[], action) => {
-    if (action.type === 'SET_SUPPORT_ANSWER'){
-        return action.payload;
+    switch (action.type) {
+        case 'SET_SUPPORT_ANSWER': return action.payload;
+        case 'CLEAR_ANSWER': return [];
     }
     return state;
 }
 
 const commentsAnswer = (state=[], action) => {
-    if (action.type === 'SET_COMMENTS_ANSWER'){
-        return action.payload;
+    switch (action.type) {
+        case 'SET_COMMENTS_ANSWER': return action.payload;
+        case 'CLEAR_ANSWER': return [];
     }
     return state;
 }
