@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
 function UnderstandingQuestion () {
     const dispatch = useDispatch();
+    const routeMatch = useRouteMatch();
     const [understandingInput, setUnderstandingInput] = useState('');
 
     const understandingAnswer = useSelector(store => store.understandingAnswer);
@@ -16,6 +17,14 @@ function UnderstandingQuestion () {
             payload: understandingInput
         })
     };
+
+    const checkIfEdit = () => {
+        if (routeMatch.path.includes('Edit')) {
+            return '/ReviewFeedback';
+        } else {
+            return '/SupportQuestion';
+        }
+    }
 
     // Renders page asking for rating of understanding. A
     // value is required; input is dispatched when the 
@@ -31,9 +40,9 @@ function UnderstandingQuestion () {
             placeholder={understandingAnswer}
             onChange={(event) => setUnderstandingInput(event.target.value)}
             ></input>
-                <button onClick={handleDispatch}>
-                <Link to='/SupportQuestion'>NEXT</Link>
-                </button>
+            <button onClick={handleDispatch}>
+            <Link to={checkIfEdit}>NEXT</Link>
+            </button>
         </form>
         </>
     )

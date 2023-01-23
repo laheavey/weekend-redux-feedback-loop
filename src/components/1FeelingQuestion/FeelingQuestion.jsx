@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
 function FeelingQuestion () {
     const dispatch = useDispatch();
+    const routeMatch = useRouteMatch();
     const [feelingInput, setFeelingInput] = useState('');
-    
+
     const feelingAnswer = useSelector(store => store.feelingAnswer);
     
     // Runs dispatch, sends input. If input already exists 
@@ -15,6 +16,14 @@ function FeelingQuestion () {
             type: 'SET_FEELING_ANSWER',
             payload: feelingInput
         })
+    }
+
+    const checkIfEdit = () => {
+        if (routeMatch.path.includes('Edit')) {
+            return '/ReviewFeedback';
+        } else {
+            return '/UnderstandingQuestion';
+        }
     }
 
     // Renders page asking for rating of feeling. A
@@ -31,13 +40,9 @@ function FeelingQuestion () {
             placeholder={feelingAnswer}
             onChange={(event) => setFeelingInput(event.target.value)}
             ></input>
-            {feelingInput 
-            ? <button onClick={handleDispatch}>
-            <Link to='/UnderstandingQuestion'>NEXT</Link>
+            <button onClick={handleDispatch}>
+            <Link to={checkIfEdit}>NEXT</Link>
             </button> 
-            : <button>NEXT</button>
-            }
-            
         </form>
         </>
 

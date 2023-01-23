@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
 function CommentsQuestion () {
     const dispatch = useDispatch();
+    const routeMatch = useRouteMatch();
     const [commentsInput, setCommentsInput] = useState('');
 
     const commentsAnswer = useSelector(store => store.commentsAnswer);
@@ -18,6 +19,14 @@ function CommentsQuestion () {
         })
     }
 
+    const checkIfEdit = () => {
+        if (routeMatch.path.includes('Edit')) {
+            return {commentsAnswer};
+        } else {
+            return 'Enter comments here.';
+        }
+    }
+
     // Renders feedback page asking for comments. Any value
     // entered (including nothing) is dispatched when the 
     // 'NEXT' button is clicked, and the next page is loaded.
@@ -27,8 +36,7 @@ function CommentsQuestion () {
             <form>
                 <input 
                 type='text' 
-                label='Enter comments here.'
-                placeholder={commentsAnswer}
+                placeholder='Enter comments here.'
                 value={commentsInput}
                 onChange={(event) => setCommentsInput(event.target.value)}
                 ></input>

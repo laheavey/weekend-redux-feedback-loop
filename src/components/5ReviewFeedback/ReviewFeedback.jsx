@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 
 function ReviewFeedback () {
+
     // I can't remember if these are called reducers or selectors,
     // but either way, these values update as the user moves through
     // the feedback form. I called them here today for a serious chat,
@@ -31,6 +32,7 @@ function ReviewFeedback () {
         }).then((response) => {
             console.log('Success in POST /feedback!', response.data);
             history.push('/Success');
+
         }).catch((error) => {
             console.log('Error in POST /feedback: ', error);
             alert('Error: Please validate feedback and try again.');
@@ -45,13 +47,16 @@ function ReviewFeedback () {
         <h2>Review Your Feedback</h2>
         <section>
             <li>Feelings: {feelingAnswer}</li>
-            <button><Link to='/'>Edit</Link></button>
+            <button><Link to='/Edit'>Edit</Link></button>
+            
             <li>Understanding: {understandingAnswer}</li> 
-            <button><Link to='/UnderstandingQuestion'>Edit</Link></button>
+            <button><Link to='/UnderstandingQuestion/Edit'>Edit</Link></button>
+            
             <li>Support: {supportAnswer}</li> 
-            <button><Link to='/SupportQuestion'>Edit</Link></button>
+            <button><Link to='/SupportQuestion/Edit'>Edit</Link></button>
+            
             <li>Comments: {commentsAnswer}</li> 
-            <button><Link to='/CommentsQuestion'>Edit</Link></button>
+            <button><Link to='/CommentsQuestion/Edit'>Edit</Link></button>
         </section>
         <button onClick={handleSubmit}>SUBMIT
         </button>

@@ -36,24 +36,30 @@ function App() {
         <Route exact path='/'>
           <FeelingQuestion />
         </Route>
-        <Route exact path='/Edit'>
-          <FeelingQuestion />
-        </Route>
+            <Route exact path='/Edit'>
+              <FeelingQuestion />
+            </Route>
 
         <Route exact path='/UnderstandingQuestion'>
           <UnderstandingQuestion />
         </Route>
-        <Route exact path='/Edit/UnderstandingQuestion'>
-          <FeelingQuestion />
-        </Route>
+            <Route exact path='/UnderstandingQuestion/Edit'>
+              <FeelingQuestion />
+            </Route>
 
         <Route exact path='/SupportQuestion'>
           <SupportQuestion />
         </Route>
+            <Route exact path='/SupportQuestion/Edit'>
+              <SupportQuestion />
+            </Route>
 
         <Route exact path='/CommentsQuestion'>
           <CommentsQuestion />
         </Route>
+            <Route exact path='/CommentsQuestion/Edit'>
+              <CommentsQuestion />
+            </Route>
         
         <Route exact path='/ReviewFeedback'>
           <ReviewFeedback />

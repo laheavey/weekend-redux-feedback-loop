@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
 function SupportQuestion () {
     const dispatch = useDispatch();
+    const routeMatch = useRouteMatch();
     const [supportInput, setSupportInput] = useState('');
 
     const supportAnswer = useSelector(store => store.supportAnswer);
@@ -16,6 +17,14 @@ function SupportQuestion () {
             payload: supportInput
         })
     };
+
+    const checkIfEdit = () => {
+        if (routeMatch.path.includes('Edit')) {
+            return '/ReviewFeedback';
+        } else {
+            return '/CommentsQuestion';
+        }
+    }
 
     // Renders page asking for rating of support. A
     // value is required; input is dispatched when the 
@@ -32,7 +41,7 @@ function SupportQuestion () {
             onChange={(event) => setSupportInput(event.target.value)}
             ></input>
                 <button onClick={handleDispatch}>
-                <Link to='/CommentsQuestion'>NEXT</Link>
+                <Link to={checkIfEdit}>NEXT</Link>
                 </button>
         </form>
         </>
