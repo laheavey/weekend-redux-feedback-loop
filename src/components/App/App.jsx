@@ -31,7 +31,7 @@ function App() {
           <UnderstandingQuestion />
         </Route>
             <Route exact path='/UnderstandingQuestion/Edit'>
-              <FeelingQuestion />
+              <UnderstandingQuestion />
             </Route>
 
         <Route exact path='/SupportQuestion'>
